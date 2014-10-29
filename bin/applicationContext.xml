@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+	           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd" 
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop">
+
+<!-- BoneCP连接池配置 -->
+	<bean id="mainDataSource" class="com.jolbox.bonecp.BoneCPDataSource"
+		destroy-method="close">
+		<property name="driverClass" value="${connection.driver_class}" />
+		<property name="jdbcUrl" value="${connection.url}" />
+		<property name="username" value="${connection.username}" />
+		<property name="password" value="${connection.password}" />
+		<property name="idleMaxAgeInMinutes" value="${bonecp.idleMaxAge}" /><!-- 连接池中未使用的链接最大存活时间，单位是分，默认值：60，如果要永远存活设置为0 -->  
+		<property name="idleConnectionTestPeriodInMinutes" value="${bonecp.idleConnectionTestPeriod}" /><!-- 检查数据库连接池中空闲连接的间隔时间，单位是分，默认值：240，如果要取消则设置为0 --> 
+		<property name="maxConnectionsPerPartition" value="${bonecp.maxConnectionsPerPartition}" /><!-- 每个分区最大的连接数 -->
+		<property name="minConnectionsPerPartition" value="${bonecp.minConnectionsPerPartition}" /><!-- 每个分区最小的连接数 -->
+		<property name="partitionCount" value="${bonecp.partitionCount}" /><!-- 分区数 ，默认值2，最小1，推荐3-4，视应用而定-->
+		<property name="acquireIncrement" value="${bonecp.acquireIncrement}" /><!-- 每次去拿数据库连接的时候一次性要拿几个,默认值：2 -->
+		<property name="statementsCacheSize" value="${bonecp.statementsCacheSize}" /> <!-- 缓存prepared statements的大小，默认值：0 -->
+		<property name="releaseHelperThreads" value="${bonecp.releaseHelperThreads}" /><!-- 每个分区释放链接助理进程的数量，默认值：3，除非你的一个数据库连接的时间内做了很多工作，不然过多的助理进程会影响你的性能 -->
+	</bean>
+		<!-- spring数据源配置 -->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.LazyConnectionDataSourceProxy">
+		<property name="targetDataSource">
+			<ref local="mainDataSource" />
+		</property>
+	</bean>
+	
+	<context:property-placeholder location="classpath:init.properties" />
+	<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
+
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource"
+			ref="dataSource" />
+	</bean>
+	
+	<context:component-scan base-package="com.mysoft" />
+  	<tx:annotation-driven transaction-manager="transactionManager" />  
+
+	<!-- 使用aop控制事务 -->
+	<aop:config>
+		<aop:pointcut id="transactionalPointcut" expression="execution(* com.mysoft.services..*.*(..))"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="transactionalPointcut"/>
+	</aop:config>
+	
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<!-- 以get开头的方法不使用事务 -->
+			<tx:method name="get*" read-only="true" propagation="NOT_SUPPORTED"/>
+			<tx:method name="*" />
+		</tx:attributes>
+	</tx:advice>
+	
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+		<constructor-arg name="dataSource" ref="dataSource"></constructor-arg>
+	</bean>
+
+
+</beans>

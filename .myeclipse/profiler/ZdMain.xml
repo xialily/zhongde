@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="profiler.settings.instrument.empty.methods">true</entry>
+<entry key="ProfilerCPUSettings_profile_runnables">true</entry>
+<entry key="profiler.settings.n.profiled.threads.limit">32</entry>
+<entry key="ProfilerCPUSettings_filter_type">2</entry>
+<entry key="profiler.settings.obj.alloc.stack.sampling.depth">-1</entry>
+<entry key="profiler.settings.instrument.method.invoke">true</entry>
+<entry key="profiler.settings.instr.scheme">1</entry>
+<entry key="ProfilerMemorySettings_track_every">10</entry>
+<entry key="ProfilerMemorySettings_mode">4</entry>
+<entry key="ProfilerCPUSettings_root_classes">com.mysoft.cjt188.**
+com.mysoft.devicereader.**
+com.mysoft.dlt645.**
+com.mysoft.entities.**
+com.mysoft.jdbc.daos.**
+com.mysoft.sc.**
+com.mysoft.services.**
+com.mysoft.zdmain.**
+com.serotonin.modbus4j.**
+</entry>
+<entry key="ProfilerCPUSettings_filter_value">com.mysoft.cjt188.*,&#13;
+com.mysoft.devicereader.*,&#13;
+com.mysoft.dlt645.*,&#13;
+com.mysoft.entities.*,&#13;
+com.mysoft.jdbc.daos.*,&#13;
+com.mysoft.sc.*,&#13;
+com.mysoft.services.*,&#13;
+com.mysoft.zdmain.*,&#13;
+com.serotonin.modbus4j.*</entry>
+<entry key="profiler.settings.istrument.getter.setter.methods">true</entry>
+<entry key="myeclipse.profiling.mode">0</entry>
+<entry key="ProfilerMemorySettings_stacktraces">-1</entry>
+<entry key="profiler.settings.sampling.interval">10</entry>
+<entry key="profiler.settings.cpu.profiling.type">0</entry>
+</properties>

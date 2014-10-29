@@ -1,0 +1,14 @@
+[framework] 2012-12-29 22:55:38,969 - smslib -0    [main] INFO  smslib  - SMSLib: A Java API library for sending and receiving SMS via a GSM modem or other supported gateways.
+This software is distributed under the terms of the Apache v2.0 License.
+Web Site: http://smslib.org
+[framework] 2012-12-29 22:55:38,970 - smslib -1    [main] INFO  smslib  - Version: 3.5.2
+[framework] 2012-12-29 22:55:38,971 - smslib -2    [main] INFO  smslib  - JRE Version: 1.7.0_01
+[framework] 2012-12-29 22:55:38,971 - smslib -2    [main] INFO  smslib  - JRE Impl Version: 21.1-b02
+[framework] 2012-12-29 22:55:38,971 - smslib -2    [main] INFO  smslib  - O/S: Windows 7 / amd64 / 6.1
+[framework] 2012-12-29 22:55:38,992 - com.mysoft.sms.SendMessage -23   [main] INFO  com.mysoft.sms.SendMessage  - SMS service start.....
+[framework] 2012-12-29 22:55:38,993 - smslib -24   [main] INFO  smslib  - Queue directory not defined. Queued messages will not be saved to filesystem.
+[framework] 2012-12-29 22:55:38,995 - smslib -26   [Thread-7] INFO  smslib  - GTW: modem.COM20: Starting gateway, using Generic AT Handler.
+[framework] 2012-12-29 22:55:38,995 - smslib -26   [Thread-7] INFO  smslib  - GTW: modem.COM20: Opening: COM20 @115200
+[framework] 2012-12-29 22:56:13,740 - smslib -34771 [Thread-7] INFO  smslib  - GTW: modem.COM20: GSM: Registered to home network.
+[framework] 2012-12-29 22:56:13,766 - smslib -34797 [Thread-7] INFO  smslib  - GTW: modem.COM20: MEM: Storage Locations Found: MESMSR
+[framework] 2012-12-29 22:56:13,812 - smslib -34843 [Thread-7] INFO  smslib  - GTW: modem.COM20: Gateway started.

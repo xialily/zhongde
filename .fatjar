@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Sun Dec 23 11:07:57 CST 2012
+onejar.license.required=true
+manifest.classpath=
+manifest.removesigners=false
+onejar.checkbox=false
+jarname=jm1.jar
+manifest.mergeall=false
+manifest.mainclass=com.mysoft.mymodbus.JModbusMain
+manifest.file=<createnew>
+jarname.isextern=false
+onejar.expand=
+excludes=
+includes=

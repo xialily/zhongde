@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="con" path="melibrary.com.genuitec.eclipse.lib.spring3.MYECLIPSE_SPRING30_CORE"/>
+	<classpathentry exported="true" kind="con" path="melibrary.com.genuitec.eclipse.lib.spring3.MYECLIPSE_SPRING30_AOP"/>
+	<classpathentry exported="true" kind="con" path="melibrary.com.genuitec.eclipse.lib.spring3.MYECLIPSE_SPRING30_Persistence_CORE"/>
+	<classpathentry exported="true" kind="con" path="melibrary.com.genuitec.eclipse.lib.spring3.MYECLIPSE_SPRING30_Persistence_JDBC"/>
+	<classpathentry exported="true" kind="lib" path="lib/bonecp-0.7.1.RELEASE.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/commons-net-3.0.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/guava-13.0.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jsmpp-2.1.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/log4j-1.2.16.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/mysql-connector-java-5.1.7-bin.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/seroUtils.jar" sourcepath="lib/seroUtils.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/slf4j-api-1.7.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/slf4j-log4j12-1.6.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/slf4j-simple-1.7.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/smslib-3.5.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/RXTXcomm.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ojdbc6.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

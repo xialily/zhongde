@@ -1,0 +1,21 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/slf4j-log4j12-1.6.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/slf4j-api-1.7.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/slf4j-simple-1.7.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-net-3.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/ojdbc6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jsmpp-2.1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/RXTXcomm.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/log4j-1.2.16.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/mysql-connector-java-5.1.7-bin.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/smslib-3.5.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/bonecp-0.7.1.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/seroUtils.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/guava-13.0.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
